@@ -1,3 +1,4 @@
+
 def is_prime(num):
     # Function to check if a number is prime or not
 
@@ -10,19 +11,33 @@ def is_prime(num):
                 return False
         else:
             return True
+    # if number is less than 1, return False
     return False
 
+
 def primes(num):
-    has_seen = set()
+    global has_seen
     results = []
     for i in range(num):
         if is_prime(i):
             if i in has_seen:
                 results.append(str(i) + "*")
             else:
+                has_seen.add(i)
                 results.append(str(i))
         else:
             continue
-    return results
+    for i in results:
+        print(i, end=" ")
+    print()
 
-print(primes(10))
+
+has_seen = set()
+
+
+if __name__ == "__main__":
+    # call script up to 10
+    primes(10)
+
+    # call script up to 20
+    primes(20)
