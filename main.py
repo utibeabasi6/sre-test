@@ -16,7 +16,7 @@ def primes(num):
     has_seen = set()
     results = []
     for i in range(num):
-        if is_prime(num):
+        if is_prime(i):
             if i in has_seen:
                 results.append(str(i) + "*")
             else:
